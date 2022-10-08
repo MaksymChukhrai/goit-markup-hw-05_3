@@ -16,10 +16,10 @@
   --card-shadow-portfolio: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   --card-projects-portfolio: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  --project-item-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+  --project-item-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --box-overlay-color: rgba(33, 150, 243, 0.9);
   --box-overlay-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  --transition-speed: 1250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-speed: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -561,16 +561,17 @@ a.client-link {
   box-shadow: var(--card-projects-portfolio);
  
 }
-.project-link,
-.project-item {
+.project-link {
   display: block;
   text-decoration: none;
-  transform: translateY(-100%) var(--transition-speed);
+  /* transform: translateY(-100%) var(--transition-speed); */
+  transition: box-shadow var(--transition-speed);
+
 }
 
-.project-link {
+/* .project-link {
   box-shadow: var(--project-item-shadow);
-}
+} */
 
 .nav-button:hover,
 .nav-button:focus {
@@ -733,7 +734,8 @@ a.client-link {
   height: 100%;
   background-color: var(--box-overlay-color);
   transform: translateY(100%);
-  transition: var(--transition-speed);
+  /* transition: var(--transition-speed); */
+  transition: translateY(100%) var(--transition-speed);
 }
 
 .project-link:hover .overlay,
@@ -794,11 +796,11 @@ a.client-link {
   align-items: center;
   background-color: transparent;
 
-  border: 1px solid rgba((0, 0, 0, 0.1));
-  border-radius: 50%;
-  padding: 0;
-  width: 30px;
-  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius:50%;
+  padding:0;
+  width:30px;
+  height:30px;
 }
 .modal-close-icon {
   cursor: pointer;
